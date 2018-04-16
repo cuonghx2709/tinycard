@@ -16,7 +16,7 @@ const getAll = () => new Promise((res, rej) =>{
 })
 
 const getCard = (idLesson) => new Promise((res, rej) => {
-    lessonSchema.findOne({"active": true, "idLesson": id})
+    lessonSchema.find({"active": true, "idLesson": idLesson})
     .exec().then(data => res(data))
     .catch(err => rej(err))
 })

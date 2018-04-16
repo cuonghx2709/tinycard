@@ -12,6 +12,12 @@ module.exports = function(app, passport) {
         res.render('home.ejs');
     });
 
+    // show the lesson page 
+    app.get('/lesson/:id', (req, res) => {
+        res.render('lesson.ejs')
+    })
+    
+
     // PROFILE SECTION =========================
     app.get('/1', isLoggedIn, function(req, res) {
         res.render('1.ejs', {
@@ -39,7 +45,7 @@ module.exports = function(app, passport) {
         // process the login form
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/1', // redirect to the secure profile section
-            failureRedirect : '/home', // redirect back to the signup page if there is an error
+            failureRedirect : '/', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
 
