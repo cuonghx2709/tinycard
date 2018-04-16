@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12 wrapper mt-5">
+            <div class="row text-center mb-5">
+                <p class="h3 col-12">Learn with TinyCards right now !</p>
+            </div>
+            <div class="row"  id="lesson-list">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(()=>{
+            $.ajax({
+                url : '/getlesson',
+                success: (docs) =>{
+                    docs.forEach((doc) =>{
+                       $('#lesson-list').append(`<div class="col-5 col-md-3 card2 text-center mb-5 mb-md-0">
+                        <a href="/lesson/${doc._id}">
+                        <img width="144px" height="166px" src="${doc.imgPath}" alt="universe" class="rounded lesson2 pointer lesson">
+                        </a>
+                    
+                        <div class="w-100"></div>
+                        <span class="text-dark font-weight-bold mt-3 d-inline-block">${doc.title}</span>
+                        </div>`)
+                    })
+                }
+            })
+
+            for(var i = 0;i< 4;i++){
+                
+            }
+
+
+        })
+    </script>
