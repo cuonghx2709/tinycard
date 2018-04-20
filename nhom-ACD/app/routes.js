@@ -1,11 +1,11 @@
 module.exports = function(app, passport) {
-    const lessonRouter = require('../modules/api/lesson/router')
-    const cardRoter = require('../modules/api/cardlesson/router')
+    const lessonRouter = require('../modules/api/lesson/router');
+    const cardRoter = require('../modules/api/cardlesson/router');
 
 
     // lesson routes
-    app.use('/api/lesson', lessonRouter)
-    app.use('/api/cardlesson', cardRoter)
+    app.use('/api/lesson', lessonRouter);
+    app.use('/api/cardlesson', cardRoter);
 
     // show the home page (will also have our login links)
     app.get('/', function(req, res) {
@@ -14,12 +14,22 @@ module.exports = function(app, passport) {
 
     // show the lesson page 
     app.get('/lesson/:id', (req, res) => {
-        res.render('lesson.ejs')
-    })
+        res.render('lesson.ejs');
+    });
 
     app.get('/completelesson', (req, res) => {
-        res.render('complete.ejs')
-    })
+        res.render('complete.ejs');
+    });
+
+    app.get('/home/lesson/:id', isLoggedIn, (req, res) => {
+        res.render('lessonLogin.ejs' ,{
+            user: req.user
+        });
+    });
+
+    app.get('/home/completelesson', isLoggedIn, (req, res) => {
+        res.render('complete.ejs');
+    });
 
     app.get('/home', isLoggedIn, function(req, res) {
         res.render('home.ejs', {
