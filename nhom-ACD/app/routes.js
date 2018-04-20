@@ -16,6 +16,10 @@ module.exports = function(app, passport) {
     app.get('/lesson/:id', (req, res) => {
         res.render('lesson.ejs')
     })
+
+    app.get('/completelesson', (req, res) => {
+        res.render('1-7.ejs')
+    })
     
 
     // PROFILE SECTION =========================
