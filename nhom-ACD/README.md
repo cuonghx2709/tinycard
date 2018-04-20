@@ -14,7 +14,8 @@
 1. Clone reo với câu lệnh: `git clone git@github.com:ACD-Team/INT2208-2-2018`
 2. Bật Cmd trên Windows hoặc Terminal trên Unix
 3. Chuyển đến thư mục vừa clone về
-4. Chạy câu lệnh:  `nodemon`
-5. Truy cập địa chỉ tại địa chỉ: `http://localhost:8080`
+4. Chạy câu lênh `npm install`
+5. Chạy câu lệnh:  `node server.js`
+6. Truy cập địa chỉ tại địa chỉ: `http://localhost:8080`
 
-Link of Document Project : https://bit.ly/2GKLuqb
+Tài liệu phần mềm : https://bit.ly/2GKLuqb
